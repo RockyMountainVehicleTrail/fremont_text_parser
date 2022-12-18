@@ -8,6 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+    
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,3 +39,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: run the script
+      run: python .github/fremont_parser.py
