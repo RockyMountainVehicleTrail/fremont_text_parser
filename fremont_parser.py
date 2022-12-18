@@ -22,6 +22,7 @@ def dms_to_decimal(raw_dms_reading):
 def main():
     current_filename_and_path = sys.argv[0]
     base_path = os.path.dirname(current_filename_and_path)
+    print('test github')
     print(base_path)    
     filename = 'fremont_1843_1844.txt'
     out_folder = 'fremont_text_by_day'
