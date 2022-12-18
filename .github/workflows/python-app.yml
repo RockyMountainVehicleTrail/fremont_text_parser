@@ -40,4 +40,4 @@ jobs:
       run: |
         pytest
     - name: run the script
-      run: python .github/fremont_parser.py
+      run: python fremont_parser.py
