@@ -60,10 +60,6 @@ def main():
             days_list = [x for x in iter_days]
             for x in iter_days_on_the:
                 days_list.append(x)
-        #    print(text[0:100])
-    #        print('days:{}\t days on the:{}\t text length:{}'.format(len(days), 
-    #                      len(days_on_the),
-    #                        len(text) ))
             # sorts by earliest index  match position
             days_list.sort(key=lambda x: x.span(0)[0])
         
@@ -85,21 +81,14 @@ def main():
                     file_num_sequence += 1
                     if (len(long) == 1) and (len(lat) == 1):
                         dec_lon = 0 -dms_to_decimal(long[0].replace('°','').replace("'", '').split(' '))
-                        dec_lat = dms_to_decimal(lat[0].replace('°','').replace("'", '').split(' ')[1:])
-    #                    print(ofname, dec_lon, dec_lat )
-                        
+                        dec_lat = dms_to_decimal(lat[0].replace('°','').replace("'", '').split(' ')[1:])                
                     elif (len(long) == 0) and (len(lat) == 1):
-    #                    dec_lon = 0 -dms_to_decimal(long[0].replace('°','').replace("'", '').split(' '))
                         dec_lat = dms_to_decimal(lat[0].replace('°','').replace("'", '').split(' ')[1:])
                         print(ofname, lat )
                     elif (len(long) > 1) and (len(lat) > 1):
-    #                    dec_lon = 0 -dms_to_decimal(long[0][0].replace('°','').replace("'", '').split(' '))
-    #                    dec_lat = dms_to_decimal(lat[0][0].replace('°','').replace("'", '').split(' ')[1:])
                         print(ofname, year, month, last_day, long, lat )
                         print('\n')
                     with open(os.path.join(base_path, out_folder, ofname), 'w') as ofile:
-    #                    ofile.write(long)
-    #                    ofile.write(lat)
                         ofile.write(text[start_index:day.span(0)[0]])
                         start_index = day.span(0)[0]
                     last_day = current_day
